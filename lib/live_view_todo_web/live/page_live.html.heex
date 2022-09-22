@@ -1,27 +1,36 @@
 <section class="todoapp">
   <header class="header">
     <h1>T O D O</h1>
-    <input class="new-todo" placeholder="Create a new todo...?" autofocus="" />
+    <form phx-submit="create" id="form">
+  <input
+    id="new_todo"
+    class="new-todo"
+    type="text"
+    name="text"
+    placeholder="Create a new todo...?"
+    autofocus=""
+    required="required"
+  />
+</form>
   </header>
   <section class="main" style="display: block;">
     <input id="toggle-all" class="toggle-all" type="checkbox" />
     <label for="toggle-all">Mark all as complete</label>
-    <ul class="todo-list">
-      <li data-id="1590167947253" class="">
-        <div class="view">
-          <input class="toggle" type="checkbox" />
-          <label>Complete online JavaScript Course</label>
-          <button class="destroy"></button>
-        </div>
-      </li>
-      <li data-id="1590167956628" class="completed">
-        <div class="view">
-          <input class="toggle" type="checkbox" />
-          <label>Job around the park 3x</label>
-          <button class="destroy"></button>
-        </div>
-      </li>
-    </ul>
+   <ul class="todo-list">
+    <%= for item <- @items do %>
+    <li data-id={item.id} class={completed?(item)}>
+      <div class="view">
+        <%= if checked?(item) do %>
+          <input class="toggle" type="checkbox" phx-value-id={item.id} phx-click="toggle" checked />
+        <% else %>
+          <input class="toggle" type="checkbox" phx-value-id={item.id} phx-click="toggle" />
+        <% end %>
+        <label><%= item.text %></label>
+        <button class="destroy" phx-click="delete" phx-value-id={item.id}></button>
+      </div>
+    </li>
+    <% end %>
+</ul>
   </section>
   <footer class="footer" style="display: block;">
     <span class="todo-count"><strong>1</strong> item left</span>
