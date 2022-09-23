@@ -1,19 +1,21 @@
+<div class="img">
 <section class="todoapp">
   <header class="header">
-    <h1>T O D O</h1>
+  	<h1>T O D O</h1>
     <form phx-submit="create" id="form">
-  <input
-    id="new_todo"
-    class="new-todo"
-    type="text"
-    name="text"
-    placeholder="Create a new todo...?"
-    autofocus=""
-    required="required"
-  />
-</form>
+      <input
+        id="new_todo"
+        class="new-todo"
+        type="text"
+        name="text"
+        placeholder="What needs to be done?"
+        autofocus=""
+        required="required"
+      />
+    </form>
   </header>
-   <section class="main" style="display: block;">
+
+  <section class="main" style="display: block;">
     <input id="toggle-all" class="toggle-all" type="checkbox">
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list" id="todo-list-items">
@@ -46,14 +48,20 @@
       <% end %>
       <% end %>
     </ul>
-
-
-
   </section>
+
+  <%= if Enum.count(@items) > 0 do %>
   <footer class="footer" style="display: block;">
-    <span class="todo-count"><strong>1</strong> item left</span>
-    <ul class="filters">
-	    <li>
+  	<span class="todo-count">
+        <%= Enum.count(Enum.filter(@items, fn i -> i.status != 1 end)) %>
+      <%= if Enum.count(Enum.filter(@items, fn i -> i.status != 1 end)) == 1 do %>
+        item
+      <% else %>
+        items
+      <% end %>
+      left</span>
+  	<ul class="filters">
+  		<li>
             <%= live_patch "All", to: Routes.live_path(@socket, LiveViewTodoWeb.PageLive, %{filter_by: "all"}) %>
   		</li>
   		<li>
@@ -62,10 +70,9 @@
   		<li>
             <%= live_patch "Completed", to: Routes.live_path(@socket, LiveViewTodoWeb.PageLive, %{filter_by: "completed"}) %>
   		</li>
-    </ul>
-
-    <button class="clear-completed" style="display: block;">
-      Clear completed
-    </button>
+  	</ul>
+  	<button class="clear-completed" style="display: block;" phx-click="clear-completed">Clear completed</button>
   </footer>
+  <% end %>
 </section>
+</div>

@@ -72,9 +72,19 @@ defmodule LiveViewTodo.Item do
     |> Repo.update()
   end
 
+  # "soft" delete
   def delete_item(id) do
     get_item!(id)
     |> Item.changeset(%{status: 2})
     |> Repo.update()
+  end
+
+  @doc """
+  Set status to 2 for item with status 1,
+  ie delete completed item
+  """
+  def clear_completed() do
+    completed_items = from(i in Item, where: i.status == 1)
+    Repo.update_all(completed_items, set: [status: 2])
   end
 end
