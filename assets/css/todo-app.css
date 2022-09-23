@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+
 html,
 body {
 	margin: 0;
@@ -20,11 +23,16 @@ button {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+button :hover {
+	color:blue;
+}
+
+/* dark mode */
 body {
-	font: 14px Arial, sans-serif;
+	font: 14px 'Josefin Sans', sans-serif;
 	line-height: 1.4em;
-	background: #f5f5f5;
-	color: #4d4d4d;
+	background:hsl(235, 21%, 11%);
+	color:  #F6F1FF;
 	min-width: 230px;
 	max-width: 550px;
 	margin: 0 auto;
@@ -32,6 +40,15 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-weight: 300;
 }
+
+/* .img {
+	background-image: url('/images/bg-desktop-dark.jpg');	
+	width: 100vh ;
+	display: flex;
+	position: initial;
+	z-index: -5;
+
+} */
 
 :focus {
 	outline: 0;
@@ -42,63 +59,67 @@ body {
 }
 
 .todoapp {
-	background: #fff;
+	background: hsl(235, 24%, 19%);
 	margin: 130px 0 40px 0;
 	position: relative;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	box-shadow: 0 2px 4px 0 rgba(36, 35, 35, 0.2),
+	            0 25px 50px 0 rgba(64, 62, 62, 0.1);
 }
-
+/* font input type */
 .todoapp input::-webkit-input-placeholder {
 	font-weight: lighter;
-	color: #e6e6e6;
+	color: #4F5267;
 
 }
 
 .todoapp h1 {
 	position: absolute;
 	top: -80px;
-    left: -220px;
+    left: -210px;
 	width: 100%;
 	font-size: 35px;
 	font-weight: 600;
 	text-align: center;
-	color: white;
+	color: #F6F1FF;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
 }
+
 
 .new-todo,
 .edit {
 	position: relative;
 	margin: 0;
 	width: 100%;
-	font-size: 24px;
+	font-size: 18px;
 	font-family: inherit;
 	font-weight: inherit;
 	line-height: 1.4em;
 	border: 0;
 	color: inherit;
 	padding: 6px;
-	border: 1px solid #999;
+	/* border: 1px solid #999; */
 	box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	border-radius: 10px;
+
 }
 
 .new-todo {
 	padding: 16px 16px 16px 60px;
 	border: none;
-	background: rgba(0, 0, 0, 0.003);
-	box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+	background: hsl(235, 24%, 19%);
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0);
 }
 
 .main {
 	position: relative;
 	z-index: 2;
-	border-top: 1px solid #e6e6e6;
+	border-top: 1px solid #777;
 }
 
 .toggle-all {
@@ -142,8 +163,8 @@ body {
 
 .todo-list li {
 	position: relative;
-	font-size: 24px;
-	border-bottom: 1px solid #ededed;
+	font-size: 18px;
+	border-bottom: 1px solid #777;
 }
 
 .todo-list li:last-child {
@@ -179,6 +200,7 @@ body {
 	border: none; /* Mobile Safari */
 	-webkit-appearance: none;
 	appearance: none;
+	cursor: pointer;;
 }
 
 .todo-list li .toggle {
@@ -206,9 +228,9 @@ body {
 	line-height: 1.2;
 	transition: color 0.4s;
 }
-
+/* marked item */
 .todo-list li.completed label {
-	color: #d9d9d9;
+	color:#777;
 	text-decoration: line-through;
 }
 
@@ -222,13 +244,14 @@ body {
 	height: 40px;
 	margin: auto 0;
 	font-size: 30px;
-	color: #cc9a9a;
+	color: #777;
 	margin-bottom: 11px;
 	transition: color 0.2s ease-out;
+	cursor: pointer;
 }
 
 .todo-list li .destroy:hover {
-	color: #af5b5e;
+	color: #777;
 }
 
 .todo-list li .destroy:after {
@@ -250,9 +273,9 @@ body {
 .footer {
 	color: #777;
 	padding: 10px 15px;
-	height: 20px;
+	height: 15px;
 	text-align: center;
-	border-top: 1px solid #e6e6e6;
+	border-top: 1px solid #777;
 }
 
 .footer:before {
@@ -267,6 +290,7 @@ body {
 .todo-count {
 	float: left;
 	text-align: left;
+	
 }
 
 .todo-count strong {
@@ -282,6 +306,10 @@ body {
 	left: 0;
 }
 
+.filters :hover {
+	color:blue;
+}
+
 .filters li {
 	display: inline;
 }
@@ -295,14 +323,6 @@ body {
 	border-radius: 3px;
 }
 
-.filters li a:hover {
-	border-color: rgba(175, 47, 47, 0.1);
-}
-
-.filters li a.selected {
-	border-color: rgba(175, 47, 47, 0.2);
-}
-
 .clear-completed,
 html .clear-completed:active {
 	float: right;
@@ -314,6 +334,7 @@ html .clear-completed:active {
 
 .clear-completed:hover {
 	text-decoration: underline;
+	color:rgb(11, 50, 124);
 }
 
 .info {
