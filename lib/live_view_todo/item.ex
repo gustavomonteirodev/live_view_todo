@@ -71,4 +71,10 @@ defmodule LiveViewTodo.Item do
     |> Item.changeset(attrs)
     |> Repo.update()
   end
+
+  def delete_item(id) do
+    get_item!(id)
+    |> Item.changeset(%{status: 2})
+    |> Repo.update()
+  end
 end

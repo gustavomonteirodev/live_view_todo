@@ -28,7 +28,7 @@ body {
 	min-width: 230px;
 	max-width: 550px;
 	margin: 0 auto;
-	-webkit-font-smoothing: antialiased;
+ 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-weight: 300;
 }
@@ -109,6 +109,7 @@ body {
 	position: absolute;
 	right: 100%;
 	bottom: 100%;
+	
 }
 
 .toggle-all + label {
@@ -163,6 +164,7 @@ body {
 
 .todo-list li.editing .view {
 	display: none;
+
 }
 
 .todo-list li .toggle {
