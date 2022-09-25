@@ -1,14 +1,26 @@
-# LiveViewTodo
+# LiveViewTodo 🧾
+It was my first time using Elixir with phoenix, it was an amazing experience! The code became really scalable. It's about a to do App created for a interview test, the layout and fonts was created by frontend Mentor, bellow I'll put some functions working in the app! 
 
-To start your Phoenix server:
+## About ⚡
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+ *
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Fork and download the files, then: 👨‍💻
+ * Install dependencies with `mix deps.get`
+ * Start Phoenix endpoint with `mix phx.server`
+  
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser. 🚀
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Demo video 📸
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/104602579/192145699-e8d86ffc-de03-4edd-8512-010368421a3e.gif)
+
+## Tech/Tools 💻
+ * CSS
+ * HTML
+ * ELIXIR
+ * PHOENIX- LIVEVIEW
+ * POSTGRES
+ * VSCODE
 
 ## Learn more
 
