@@ -1,6 +1,6 @@
 # LiveViewTodo 🧾
 
-It was my first time using Elixir with phoenix, it was an amazing experience! The code became really scalable. It's about a to do App created for a interview test, the layout and fonts was created by frontend Mentor, bellow I'll put some functions working in the app! 
+It was my first time using Elixir with phoenix, it was an amazing experience! The code became really scalable. It's about a to do App created for an interview test, the design was created by frontend Mentor, bellow I'll put some functionalities working in the app! 
 
 ## Demo video 📸
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/104602579/192145699-e8d86ffc-de03-4edd-8512-010368421a3e.gif)
